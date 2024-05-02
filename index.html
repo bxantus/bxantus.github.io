@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link href="style.css" rel="stylesheet">
+		<title>Botond Xántus resume</title>
+    <script>
+      function toggleMoreInfo(event) {
+        const button = event.target;
+        const id = button.dataset.details // value of data-details
+        if (!id) return;
+        const details = document.querySelector(id);
+        if (!details) return;
+        button.classList.toggle('open');
+        details.classList.toggle('open');
+      }
+      window.onload = () => {
+        for (const button of document.querySelectorAll("button.more"))
+          button.addEventListener('click', toggleMoreInfo);
+      }
+    </script>
+	</head>
+
+	<body>
+		<header id="header">
+      <div class="bg"></div>
+			<!-- resume header with your name and title -->
+      <section class="title">
+        <img class="profile" src="img/xb_cv.jpg" aria-hidden="true"></img>
+        <h1>
+          Botond <span class="name">Xántus</span> 
+        </h1>
+      </section>
+      <hr/>
+      <section class="about">
+        <p>
+          I'm a <span class="strong">software developer, in Budapest, Hungary,</span> currently focusing on UI frameworks, programming languages 
+          and productivity tools.
+          I like to create frameworks, tooling and applications which ease other people’s life, 
+          and boosts their productivity.
+        </p>
+      </section>
+      <hr/>
+		</header>
+		<main>
+			<article id="mainLeft">
+				<section>
+					<h2>More about me</h2>
+					<!-- contact info including social media -->
+          <a class="social" href="https://github.com/bxantus">
+            <img class="icon social" aria-hidden="true" src="img/github-icon.svg"></img>
+            / bxantus
+          </a>
+          <a class="social" href="https://www.linkedin.com/in/botond-xantus">
+              <img class="icon social" aria-hidden="true" src="img/linkedin-icon.svg"></img>
+              / Botond Xántus
+          </a>
+				</section>
+				<section>
+					<h2>Skills</h2>
+					<h3>Industry Knowledge</h3>
+          <p>Software Design, Test Automation, Agile/Scrum</p>
+          <h3>Programming languages</h3>
+          <p>C++, TypeScript, JavaScript, Python, HTML, CSS, shell scripting</p>
+          <h3>Platforms</h3>
+          <p>
+            Android, iOS, Windows
+          </p>
+          <h3>Tools & Technologies</h3>
+          <p>Git VCS, Node.js, Visual Studio Code, Visual Studio</p>
+				</section>
+				<section>
+					<h2>Education</h2>
+					<h3>BSc, Computer Science</h3>
+          <p>
+            Babes-Bolyai University<br/>
+            2002-2006
+          </p>
+          
+          <p>
+            Diploma Thesis: Emulation of the ARM processor (Game Boy Advance emulator)
+          </p>
+				</section>            
+			</article>
+			<article id="mainRight">
+				<section>
+					<h2>Work Experience</h2>
+					<!-- your work experience -->
+          <h3>Software Developer and Architect</h3>
+          <p class="title">
+              NNG LLC | 2012 - Present
+          </p>
+          <p>
+            Was responsible for designing and developing our in-house 'Ui Engine', a multiplatform, scalable, customizable 
+            and efficient HMI engine and framework, built on MVVM (Model-view-viewmodel) foundations. 
+
+            Also I shared the responsibility of coordinating tasks and technical leadership in the UI Engine team.
+            <button class="more" data-details="#uiengine-details"></button>
+          </p>
+          <div id="uiengine-details" class="details">
+            Here is an incomplete list about some of the things I've worked on:
+            <ul>
+              <li>SVG parser and renderer. Integrating SVG support into the engine (including CSS support in SVGs)</li>
+              <li>contributing to our own `xscript` scripting language (an EcmaScript like language): module system, debugging support</li>
+              <li>building an xUnit like framework for unit and visual testing. It is written in the xscript language, supporting: mock functions, visual testing, data driven testing, coverage measurements </li>
+              <li>vscode 'script debugger' extension: xscript debugger, xscript language server (intellisense), test adapter integration, inspector (like the inspectors in modern browsers)</li>
+              <li>IPC framework supporting data mirroring, remote evaluation of scripts, object interchange. Building an `Integrated cockpit` multiprocess solution to demonstrate capabilities of the framework</li>
+              <li>focus system: supporting navigation and interaction with apps written in the engine, using hardware controllers (like rotary controllers found in most cars, or keyboards)</li>
+              <li>support for different pixel density devices: density independent pixels, using alternative bitmaps</li>
+              <li>widget system, theming and skinning support, handling touch events (similar to W3C dom events)</li>
+              <li>gesture recognizers (double tap zoom, double tap, pinch etc.)</li>
+              <li>animation system, CSS transitions</li>
+              <li>handling of multiple displays, also with different pixel densities</li>
+              <li>support for user defined components (like checkbox, radio, button, grid view)</li>
+              <li>flexBox layout strategy</li>
+            </ul>
+          </div>
+          <h3>Software Developer</h3>
+          <p class="title">NNG LLC | 2009 - 2012</p>
+          <p>Was working on the Android and iOS ports of iGO My way, a GPS navigation application. My tasks included
+             the maintenance, stabilization and performance tuning of the iGO code, focusing on smartphone related features: 
+             picture navigation, gesture recognition, location API
+          </p>
+          <h3>Software Developer</h3> 
+          <p class="title">HS Games | 2008 - 2009</p>
+          <p>Game and tool development for Nintendo DS</p>
+          <h3>Software Developer</h3>
+          <p class="title">Impossible games | 2006 - 2008</p>
+          <p>Game development on J2ME platform (Reiner Knizia's Samurai, Viking Vex Deluxe, Warlords Castles).</p>
+          <p>Multiplayer API, Game engine and tool development</p>
+				</section>
+        <section>
+					<h2>Languages</h2>
+          <ul>
+            <li>
+              <h3>English</h3>
+              Full professional proficiency
+            </li>
+            <li>
+              <h3>German</h3>
+              Elementary proficiency
+            </li>
+            <li>
+              <h3>Romanian</h3>
+              Limited working proficiency
+            </li>
+            <li>
+              <h3>Hungarian</h3>
+              Native or bilingual proficiency
+            </li>
+          </ul>
+				</section>
+			</article>
+		</main>
+	</body>
+</html>
