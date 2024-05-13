@@ -168,7 +168,7 @@ button.more.open::before {
 }
 
 /* tablet layout: name in two lines, closer to image  */
-@media screen and (max-width: 960px) {
+@media (max-width: 960px) {
     section.title > h1 {
         line-height: 1.275;
         max-width: 302px;
@@ -178,7 +178,7 @@ button.more.open::before {
     }
 }
 /* tablet + mobile layout - only one column */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     main {
         grid-template-columns: 100%;
         grid-template-areas: 
@@ -191,7 +191,7 @@ button.more.open::before {
     }
 }
 
-@media screen and (max-width: 640px) {
+@media (max-width: 640px) {
     body {
         padding: 0 40px;
     }
@@ -223,10 +223,43 @@ button.more.open::before {
     }
 }
 
+.print-only {
+    display: none;
+}
+
 @media print {
-    .details, .more {
+    .more {
         display: none !important;
     }
+    .details {
+        display: initial !important;
+    }
+    #skills, #experience, #languages {
+        break-before: page;
+    }
+    #more-about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .print-only {
+        display: initial;
+    }
+    a {
+        text-transform: none;
+    }
+    body {
+        background-color: initial;
+    }
+    section.title {
+        margin-top: 0;
+    }
+}
+
+@page {
+    margin: 0;
+    margin-bottom: 86px;
+    margin-top: 86px;
 }
 /* styling for buttons */
 /* inspired by https://css-tricks.com/overriding-default-button-styles/ */
