@@ -156,7 +156,7 @@ a.social {
 }
 
 .details.open {
-    display: initial;
+    display: revert;
 }
 
 button.more::before {
@@ -232,9 +232,9 @@ button.more.open::before {
         display: none !important;
     }
     .details {
-        display: initial !important;
+        display: revert !important;
     }
-    #skills, #experience, #languages {
+    #skills, #experience {
         break-before: page;
     }
     #more-about {
